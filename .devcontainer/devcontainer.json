@@ -16,7 +16,7 @@
 	},
 
 	"hostRequirements": {
-		"cpus": 2
+		"cpus": 4
 	},
 	
 	// forward ports for the app
@@ -42,7 +42,8 @@
 		"davidanson.vscode-markdownlint",
 		"gruntfuggly.todo-tree",
 		"mutantdino.resourcemonitor",
-		"humao.rest-client"
+		"humao.rest-client",
+        "ms-vscode.makefile-tools"
 	],
 
 	// Use 'onCreateCommand' to run commands as part of container creation.
