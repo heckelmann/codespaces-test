@@ -9,10 +9,8 @@ help:
 all: create
 
 create:
-	@echo "Creating k3d cluster"
-	@k3d cluster create --config deploy/k3d.yaml --k3s-server-arg "--no-deploy=traefik" --k3s-server-arg "--no-deploy=servicelb"
-	@echo "Waiting for cluster to be ready"
-	@sleep 20
+	@echo "Creating Kind cluster"
+	@kind create cluster --config deploy/kind-config.yaml
 	@echo "Installing argocd"
 	@kubectl create namespace argocd
 	@kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml

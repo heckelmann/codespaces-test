@@ -1,7 +1,7 @@
 # this image is built and updated weekly
 # https://github.com/cse-labs/codespaces-images
 
-FROM ghcr.io/k3d-io/k3d:latest
+FROM checkelmann/kind:latest
 
 # some images require specific values
 ARG USERNAME=vscode
