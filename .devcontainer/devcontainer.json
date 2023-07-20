@@ -18,7 +18,7 @@
 	"forwardPorts": [
 		30000,
 		39090,
-		38080,
+		30008,
 		30200,
 		36686
 	],
@@ -26,7 +26,7 @@
 	// add labels
 	"portsAttributes": {
 		"30000": { "label": "Grafana" },
-		"38080": { "label": "ArgoCD HTTP" },
+		"30008": { "label": "ArgoCD HTTP" },
 		"39090": { "label": "Prometheus" },
 		"30200": { "label": "DemoApp" },
 		"36686": { "label": "Jaeger" }
