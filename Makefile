@@ -16,5 +16,8 @@ create:
 	@kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
 	@kubectl patch cm/argocd-cm -n argocd --type=merge -p='{"data":{"resource.customizations.health.argoproj.io_Application":"hs = {}\nhs.status = \"Progressing\"\nhs.message = \"\"\nif obj.status ~= nil then\n  if obj.status.health ~= nil then\n    hs.status = obj.status.health.status\n    if obj.status.health.message ~= nil then\n      hs.message = obj.status.health.message\n    end\n  end\nend\nreturn hs\n"}}'
 	@kubectl wait --for=condition=available deployment/argocd-server -n argocd --timeout=300s
+	@kubectl apply -n argocd -f deploy/argocd-no-tls.yaml
 	@kubectl apply -n argocd -f deploy/argocd-nodeport.yaml
+	@kubectl -n argocd rollout restart deploy/argocd-server
+	@kubectl wait --for=condition=available deployment/argocd-server -n argocd --timeout=300s
 	@kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d
