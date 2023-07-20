@@ -18,21 +18,33 @@
 	"hostRequirements": {
 		"cpus": 4
 	},
-	
+
+	//- hostPort: 30000
+	//- hostPort: 39090
+	//- hostPort: 30080
+
+	//- hostPort: 30443
+	//- hostPort: 36686
+
+
 	// forward ports for the app
 	"forwardPorts": [
-		30080,
-		30433,
-        30000,
-		32000
+		30000,
+		39090,
+        30080,
+		30443,
+		30200,
+		36686
 	],
 
 	// add labels
 	"portsAttributes": {
-        "30080": { "label": "Ingress HTTP" },
-        "30433": { "label": "Ingress HTTPS" },
-        "30000": { "label": "Prometheus" },
-		"32000": { "label": "Grafana" },
+        "30000": { "label": "Grafana" },
+		"30080": { "label": "ArgoCD HTTP" },
+        "30433": { "label": "ArgoCD HTTPS" },
+        "39090": { "label": "Prometheus" },
+		"30200": { "label": "DemoApp" },
+		"36686": { "label": "Jaeger" }
 	},
 
 	// Install extensions
