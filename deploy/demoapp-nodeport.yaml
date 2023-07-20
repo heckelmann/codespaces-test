@@ -4,6 +4,7 @@ metadata:
   name: demoapp-nodeport
   namespace: demo
 spec:
+  type: NodePort
   selector:
     app.kubernetes.io/name: featuredemo
   ports:
