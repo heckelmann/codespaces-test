@@ -16,20 +16,20 @@
 
 	// forward ports for the app
 	"forwardPorts": [
-		30000,
-		39090,
-		30008,
-		30200,
-		36686
+		30100,
+		30101,
+		30102,
+		30103,
+		30104
 	],
 
 	// add labels
 	"portsAttributes": {
-		"30000": { "label": "Grafana" },
-		"30008": { "label": "ArgoCD HTTP" },
-		"39090": { "label": "Prometheus" },
-		"30200": { "label": "DemoApp" },
-		"36686": { "label": "Jaeger" }
+		"30100": { "label": "ArgoCD HTTP" },
+		"30101": { "label": "Grafana" },
+		"30102": { "label": "Prometheus" },
+		"30103": { "label": "DemoApp" },
+		"30104": { "label": "Jaeger" }
 	},
 
 	// Install extensions

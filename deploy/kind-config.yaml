@@ -10,21 +10,19 @@ nodes:
       kubeletExtraArgs:
         node-labels: "ingress-ready=true"
   extraPortMappings:
-  - hostPort: 30000
-    containerPort: 30000
+  - hostPort: 30100
+    containerPort: 30100
     protocol: TCP
-  - hostPort: 39090
-    containerPort: 39090
+  - hostPort: 30101
+    containerPort: 30101
     protocol: TCP
-  - hostPort: 30080
-    containerPort: 30080
+  - hostPort: 30102
+    containerPort: 30102
     protocol: TCP
-  - hostPort: 30443
-    containerPort: 30443
+  - hostPort: 30103
+    containerPort: 30103
     protocol: TCP
-  - hostPort: 36686
-    containerPort: 36686
+  - hostPort: 30104
+    containerPort: 30104
     protocol: TCP  
-  - hostPort: 30200
-    containerPort: 30200
-    protocol: TCP         
+ 
