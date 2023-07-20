@@ -19,20 +19,11 @@
 		"cpus": 4
 	},
 
-	//- hostPort: 30000
-	//- hostPort: 39090
-	//- hostPort: 30080
-
-	//- hostPort: 30443
-	//- hostPort: 36686
-
-
 	// forward ports for the app
 	"forwardPorts": [
 		30000,
 		39090,
-        30080,
-		30443,
+        38080,
 		30200,
 		36686
 	],
@@ -40,23 +31,26 @@
 	// add labels
 	"portsAttributes": {
         "30000": { "label": "Grafana" },
-		"30080": { "label": "ArgoCD HTTP" },
-        "30433": { "label": "ArgoCD HTTPS" },
+		"38080": { "label": "ArgoCD HTTP" },
         "39090": { "label": "Prometheus" },
 		"30200": { "label": "DemoApp" },
 		"36686": { "label": "Jaeger" }
 	},
 
 	// Install extensions
-	"extensions": [
-		"ms-azuretools.vscode-docker",
-		"ms-kubernetes-tools.vscode-kubernetes-tools",
-		"davidanson.vscode-markdownlint",
-		"gruntfuggly.todo-tree",
-		"mutantdino.resourcemonitor",
-		"humao.rest-client",
-        "ms-vscode.makefile-tools"
-	],
+	"customizations": {
+		"vscode": {	
+			"extensions": [
+				"ms-azuretools.vscode-docker",
+				"ms-kubernetes-tools.vscode-kubernetes-tools",
+				"davidanson.vscode-markdownlint",
+				"gruntfuggly.todo-tree",
+				"mutantdino.resourcemonitor",
+				"humao.rest-client",
+				"ms-vscode.makefile-tools"
+			]
+		}
+	},
 
 	// Use 'onCreateCommand' to run commands as part of container creation.
 	"onCreateCommand": "/bin/bash -c .devcontainer/on-create.sh",
