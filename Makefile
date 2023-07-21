@@ -20,6 +20,6 @@ create:
 	@kubectl apply -n argocd -f deploy/argocd-no-tls.yaml
 	@kubectl apply -n argocd -f deploy/argocd-nodeport.yaml
 	@kubectl -n argocd rollout restart deploy/argocd-server
-	@kubectl wait --for=condition=available deployment/argocd-server -n argocd --timeout=300s
+	@kubectl -n argocd rollout status deploy/argocd-server --timeout=300s
 	@echo "ArgoCD Admin Password"
 	@kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d
