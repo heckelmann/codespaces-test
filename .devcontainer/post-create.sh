@@ -12,4 +12,6 @@ echo "post-create start" >> ~/status
 
 # add your commands here
 
+alias k=kubectl
+
 echo "post-create complete" >> ~/status
