@@ -17,6 +17,6 @@ stringData:
     traceToMetrics = true
 
     [security]
-    csrf_trusted_origins = "https://*.preview.app.github.dev"
+    csrf_trusted_origins = "*.preview.app.github.dev"
     csrf_additional_headers = ""
 type: Opaque
