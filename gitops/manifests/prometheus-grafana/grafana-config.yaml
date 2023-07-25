@@ -15,4 +15,8 @@ stringData:
     
     [feature_toggles]
     traceToMetrics = true
+
+    [security]
+    csrf_trusted_origins = "https://*.preview.app.github.dev"
+    csrf_additional_headers = ""
 type: Opaque
