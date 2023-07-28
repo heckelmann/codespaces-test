@@ -6,6 +6,7 @@
 	"runArgs": ["--init", "--privileged"],
 	"mounts": [ "source=/var/run/docker.sock,target=/var/run/docker-host.sock,type=bind" ],
 	"overrideCommand": false,
+	"runArgs": ["--network=host"]
 
 	// some base images require a specific user name
 	"remoteUser": "vscode",
