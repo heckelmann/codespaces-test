@@ -10,6 +10,7 @@ ARG USER_GID=$USER_UID
 RUN export DEBIAN_FRONTEND=noninteractive
 
 ADD https://raw.githubusercontent.com/microsoft/vscode-dev-containers/main/script-library/docker-in-docker-debian.sh /tmp/scripts/docker.sh
+RUN chmod +x /tmp/scripts/docker.sh
 # update the container
 RUN apt-get update && \
     apt-get upgrade -y && \
